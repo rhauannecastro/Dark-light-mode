@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+/* variavel de cores */
+:root{
+    /* cores claras */
+    --color-light-50: #f8fafc;
+    /* cores escuras */
+    --color-dark-50: #797984;
+    --color-dark-100: #312d37;
+    --color-dark-900: #000;
+    /* tons de roxo */
+    --color-purple-50:#7c3aed;
+    --color-purple-100:#a855f7;
+    --color-purple-200:#bf46ef;
+    /* dark mode */
+    --color-dark-purple-50:#622dbd;
+    --color-dark-purple-100:#6e35a3;
+    --color-dark-purple-200:#731c96;
+    /* background */
+    --color-gradient: linear-gradient(90deg, var(--color-purple-50), var(--color-purple-100), var(--color-purple-200));
+    /* dark background  */
+    --color-dark-gradient: linear-gradient(90deg, var(--color-dark-purple-50), var(--color-dark-purple-100), var(--color-dark-purple-200));
+}
+    /* geral */
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    /* card branco */
+#container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-gradient);
+}
+
+#login_form{
+    background-color: var(--color-light-50);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 10px;
+    gap: 30px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.336) ;
+    height: fit-content;
+    animation: dark-to-light 0.3s ease-in-out;
+}
+    /* header */
+#form_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#form_header h1{
+    font-size: 40px;
+    position: relative;
+}
+
+#form_header h1::before{
+    position: absolute;
+    content: '';
+    width: 40%;
+    background-color: var(--color-purple-50);
+    height: 3px;
+    bottom: 10px;
+    border-radius: 5px;
+}
+
+#mode_icon{
+    cursor: pointer;
+    font-size: 20px;
+}
+    /* social  medias */
+#social_media{
+    display:flex;
+    justify-content: space-around;
+}
+#social_media svg{
+    width: 45px;
+}
+
+#social_media svg:hover{
+    transform: scale(1.2);
+}
+
+    /* Inputs */
+#inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#input-box label{
+    font-size: 14px;
+    color: var(--color-dark-50);
+}
+
+.input-field{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 3px;
+    cursor: text;
+    border-bottom: 1px solid var(--color-purple-50);
+}
+
+.input-field i{
+    font-size: 18px;
+    color: var(--color-dark-900);
+}
+
+.input-field input{
+    border: none;
+    background-color: transparent;
+    width: 260px;
+    font-size: 18px;
+    padding: 0px 5px;
+}
+
+.input-field input:focus{
+    outline: none;
+}
+
+    /* Esqueceu a senha */
+#forgot_password a{
+    text-decoration: none;
+    font-size: 12px;
+    color: var(--color-dark-50);
+}
+
+#forgot_password a:hover{
+    color: var(--color-purple-50);
+}
+    /* Botão */
+#login_button{
+    border: none;
+    background: var(--color-gradient);
+    color: var(--color-light-50);
+    padding: 7px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#login_button:hover{
+    transform:scale(1.05);
+}
+
+    /* Trocando de cor */
+.dark#login_form{
+    color:var(--color-light-50);
+    background-color: var(--color-dark-100 );
+    animation: light-to-dark 0.3s ease-in-out;
+}
+
+.dark#login_form .input-field input,
+.dark#login_form .input-field i{
+    color: var(--color-light-50);
+}
+
+.dark#container{
+    background: var(--color-dark-gradient);
+}
+/* suavizando */
+@keyframes dark-to-light{
+    0%{
+        background-color: var(--color-dark-100);
+    }
+    100%{
+        background-color: var(--color-light-50);
+    }
+}
+
+@keyframes light-to-dark{
+    0%{
+        background-color: var(--color-light-50);
+    }
+    100%{
+        background-color: var(--color-dark-100);
+    }
+}
